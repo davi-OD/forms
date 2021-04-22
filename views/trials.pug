@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6' crossorigin='anonymous')
+        link(rel='stylesheet' href='/stylesheets/styles.css')
+        title Covid Test Register Form
+    body
+    .container
+        form(action='/covid' method='POST' name='covidReg')
+            .row
+                .col-md-12
+                    h3 Ministry of Health
+                    h3.covid Covid-19 (CORONA-VIRUS)
+                    h3 Virus Test Registration Form
+                //- .alert.alert-success(role='alert')
+                //- | A simple success alert—check it out!
+                .col-md-6
+                    label(for='') Surname
+                    input.form-control(type='text' name='surName')
+                    span#surEr.error
+                .col-md-6
+                    label(for='') Given Name
+                    input.form-control(type='text' name='givenName')
+                    span#givenErr.error
+                .col-md-6
+                    label(for='') Date of Birth
+                    input.form-control(type='text' name='dob')
+                    span#dateBrr.error
+                .col-md-6
+                    label(for='') Place of Residence
+                    input.form-control(type='text' name='residence')
+                    span#residenceErr.error
+                .col-md-6
+                    label(for='') Occupation
+                    input.form-control(type='text' name='occupation')
+                    span#occupErr.error
+                .col-md-6
+                    label(for='') Nationality
+                    input.form-control(type='text' name='nation')
+                    span#nationErr.error
+                .col-md-12(style='border-bottom:1px solid gray') Gender
+                .col-md-6
+                    label(for='') Male
+                    input(type='radio' name='gender' value='male')
+                .col-md-6
+                    label(for='') Female
+                    input(type='radio' name='gender' value='female')
+                    span#gendErr.error
+                .col-md-12
+                    label  Category
+                    select.form-select(aria-label='Default select example' name='category')
+                        option(selected='') --Select Category --
+                        option(value='1') One
+                        option(value='2') Two
+                        option(value='3') Three
+                    span#categErr.error
+                .col-md-12
+                button.btn-primary(type='submit') Register
+        script(src='/trials.js')
